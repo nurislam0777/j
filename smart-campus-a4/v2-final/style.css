@@ -1,0 +1,190 @@
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #1a2233;
+  --muted: #6b7588;
+  --primary: #1f6feb;
+  --primary-dark: #155ab8;
+  --success-bg: #e6f7ed;
+  --success-text: #1a7d3f;
+  --error-bg: #fdeceb;
+  --error-text: #c02b25;
+  --border: #e2e6ee;
+  --radius: 14px;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+#app {
+  width: 100%;
+  max-width: 560px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(1.4rem, 5vw, 1.9rem);
+  margin: 0 0 4px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.hero .sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.04);
+}
+
+.room-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.room-icon { font-size: 1.6rem; line-height: 1; }
+.room-head h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+.now { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }
+.now strong { color: var(--text); }
+
+.bookings { margin-top: 14px; }
+.bookings h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+.bookings ul { list-style: none; margin: 0; padding: 0; }
+.bookings li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #eef3fa;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.block-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: #fff8e6;
+  border: 1px solid #f0d98a;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+}
+.block-toggle input { width: 18px; height: 18px; cursor: pointer; }
+
+.form-card h3 { margin: 0 0 14px; font-size: 1.05rem; font-weight: 600; }
+.fields { display: flex; flex-direction: column; gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 5px; font-size: 0.9rem; color: var(--muted); font-weight: 500; }
+.field input {
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text);
+  background: #fbfcfe;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.15);
+}
+
+button#checkBtn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+button#checkBtn:hover { background: var(--primary-dark); }
+button#checkBtn:active { transform: scale(0.99); }
+
+.result {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  animation: pop 0.18s ease-out;
+}
+.result strong { font-size: 1.1rem; }
+.result p { margin: 4px 0 0; font-size: 0.92rem; }
+.result.ok { background: var(--success-bg); color: var(--success-text); border: 1px solid #c6e8d2; }
+.result.no { background: var(--error-bg); color: var(--error-text); border: 1px solid #f5c9c6; }
+
+.errors {
+  margin: 14px 0 0;
+  padding: 12px 16px 12px 30px;
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid #f5c9c6;
+  border-radius: 10px;
+  list-style: disc;
+  font-size: 0.9rem;
+}
+.errors li { margin: 2px 0; }
+
+.foot {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 4px 0 8px;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 480px) {
+  .fields { flex-direction: row; }
+  .field { flex: 1; }
+}

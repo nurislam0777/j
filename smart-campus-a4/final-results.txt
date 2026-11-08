@@ -1,0 +1,44 @@
+
+ RUN  v2.1.9 /tmp/w/a4/v2-final
+
+ ✓ tests/availability.test.js > Room availability > TC01 start >= end is rejected (AC1)
+ ✓ tests/availability.test.js > Room availability > TC02 request in the past is rejected (AC1)
+ ✓ tests/availability.test.js > Room availability > TC03 exactly 120 minutes is allowed (AC2)
+ ✓ tests/availability.test.js > Room availability > TC04 121 minutes is rejected (AC2)
+ ✓ tests/availability.test.js > Room availability > TC05 blocked room is rejected (AC3)
+ ✓ tests/availability.test.js > Room availability > TC06 real overlap is rejected (AC4)
+ ✓ tests/availability.test.js > Room availability > TC07 booking that ends when another starts is allowed (AC4)
+ ✓ tests/availability.test.js > Room availability > TC08 booking that starts when another ends is allowed (AC4)
+ ✓ tests/availability.test.js > Room availability > TC09 free slot returns Available (AC5)
+ ✓ tests/availability.test.js > Room availability > TC10 bookings array is not changed (AC5)
+ ✓ tests/availability.test.js > Rejection reasons > returns invalidRange when end is not after start (AC1)
+ ✓ tests/availability.test.js > Rejection reasons > returns past for a start before now (AC1)
+ ✓ tests/availability.test.js > Rejection reasons > returns tooLong for 121 minutes (AC2)
+ ✓ tests/availability.test.js > Rejection reasons > returns blocked for a blocked room (AC3)
+ ✓ tests/availability.test.js > Rejection reasons > returns overlap for a real conflict (AC4)
+ ✓ tests/availability.test.js > Rejection reasons > returns null for an available slot (AC5)
+ ✓ tests/availability.test.js > Rejection reasons > reports the first failing rule when several fail (AC1 before AC3)
+ ✓ tests/availability.test.js > Regression edges > reversed interval is rejected by checkAvailability (AC1)
+ ✓ tests/availability.test.js > Regression edges > exactly 120 minutes returns null from explainAvailability (AC2)
+ ✓ tests/availability.test.js > Regression edges > slot ending exactly when a booking starts is not an overlap (AC4)
+ ✓ tests/availability.test.js > Regression edges > slot starting exactly when a booking ends is not an overlap (AC4)
+ ✓ tests/availability.test.js > Regression edges > explainAvailability does not change the bookings array on the overlap path (AC5)
+ ✓ tests/catalog.test.js > Room catalog > has at least four rooms with all required fields
+ ✓ tests/catalog.test.js > Room catalog > catalog data can not be changed (AC5)
+ ✓ tests/catalog.test.js > Filtering F1-F2 > F1 exact capacity is included (24 attendees, C-310 has 24)
+ ✓ tests/catalog.test.js > Filtering F1-F2 > F1 insufficient capacity is excluded (25 attendees)
+ ✓ tests/catalog.test.js > Filtering F1-F2 > F2 room must contain ALL selected equipment
+ ✓ tests/catalog.test.js > Filtering F1-F2 > F2 room with only part of the equipment is excluded
+ ✓ tests/catalog.test.js > Filtering F1-F2 > F1+F2 with no matching room returns an empty list
+ ✓ tests/catalog.test.js > Availability per room F3 > F3 blocked room from the catalog is never available
+ ✓ tests/catalog.test.js > Availability per room F3 > check uses the chosen room's bookings, not another room's
+ ✓ tests/catalog.test.js > Availability per room F3 > findConflict returns the conflicting booking of the same room
+ ✓ tests/ui.test.js > UI behaviour > F4 shows a clear empty state when no rooms match
+ ✓ tests/ui.test.js > UI behaviour > F5 changing the selected room refreshes the result
+ ✓ tests/ui.test.js > UI behaviour > filter list shows only matching rooms
+
+ Test Files  3 passed (3)
+      Tests  35 passed (35)
+   Start at  17:17:06
+   Duration  821ms (transform 64ms, setup 0ms, collect 54ms, tests 101ms, environment 247ms, prepare 111ms)
+

@@ -1,0 +1,30 @@
+/* Styles for the new catalog/filter controls. style.css is not changed. */
+.filter-card h3 { margin: 0 0 14px; font-size: 1.05rem; font-weight: 600; }
+.filter-card .field { margin-bottom: 12px; }
+.field select {
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fbfcfe;
+  color: var(--text);
+}
+.equipment { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin: 0 0 12px; }
+.equipment legend { font-size: 0.9rem; color: var(--muted); padding: 0 4px; }
+.equipment label { display: inline-flex; align-items: center; gap: 6px; margin: 4px 14px 4px 0; font-size: 0.95rem; }
+.meta { margin: 2px 0 0; color: var(--muted); font-size: 0.85rem; }
+.empty {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--error-bg);
+  color: var(--error-text);
+  font-size: 0.95rem;
+}
+@media (max-width: 420px) {
+  .equipment label { display: flex; }
+}
+button#checkBtn:disabled { background: #a9b4c6; cursor: not-allowed; }
+/* style.css sets display on .block-toggle, which overrides the hidden attribute */
+.block-toggle[hidden] { display: none; }
